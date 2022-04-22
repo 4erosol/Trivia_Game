@@ -166,7 +166,7 @@ function showResults() {
 }
 
 function startTimer(time) {
-        counter = setInterval (time, 1000);
+        counter = setInterval (time, 30000);
         function timer(){
             timeCount.textContent = time;
             time--;
