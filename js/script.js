@@ -152,7 +152,7 @@ function showResults() {
     infoBox.classList.remove("activeInfo"); 
     triviaBox.classList.remove("activeTrivia"); 
     resultBox.classList.add("activeResult"); 
-    const scoreText = result_box.querySelector(".score_text");
+    const scoreText = resultBox.querySelector(".score_text");
     if(userScore > 7) {
         let scoreTag = '<span>Congratulations! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
@@ -180,7 +180,6 @@ function startTimer(time) {
                 const allOptions = optionList.children.length; 
                 let correctAnswer = questions[questionCount].answer;
                     }
-                }
                 for(i=0; i < allOptions; i++){
                     if(optionList.children[i].textContent == correctAnswer){ 
                         optionList.children[i].setAttribute("class", "option correct"); 
@@ -189,8 +188,10 @@ function startTimer(time) {
                     nextButton.classList.add("show");
             }
         }
+                
+        }
         function startTimeLine(time){
-            counterLine = setInterval(timer, 29);
+            counterLine = setInterval(timer, 57);
             function timer(){
                 time += 1; 
                 timeLine.style.width = time + "px"; 
@@ -203,6 +204,6 @@ function startTimer(time) {
 // Final results 
 
 function questionsCounter(index){
-    let totalQuestionsCounterTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    let totalQuestionsCounterTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> questions</span>';
     bottomQuestionsCounter.innerHTML = totalQuestionsCounterTag;  
 }
