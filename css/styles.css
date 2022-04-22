@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
+}
+
+body {
+background: blue;
+}
+
+.start_button, .info_box, .trivia_box, .result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info_box.activeInfo, .trivia_box.activeTrivia, .result_box.activeResult {
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    
+}
+
+.start_button button {
+    font-size: 24px;
+    font-weight: 500;
+    color: blue;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+}
+
+.info_box {
+    width: 540px;
+    background: white;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.info_box .info_title {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.info_box .info_list {
+    padding: 15px 35px;
+}
+
+.info_box .info_list .info {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.info_box .info_list .info span {
+    font-weight: 700;
+    color: blue;
+}
+
+.info_box .buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid white;
+}
+
+.info_box .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.trivia_box {
+    width: 550px;
+    background: white;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.trivia_box header {
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.trivia_box header .title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.trivia_box header .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: lightgoldenrodyellow;
+    border: 1px solid lightsteelblue;
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.trivia_box header .timer .time_left_text {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.trivia_box header .timer .timer_sec {
+    font-size: 18px;
+    font-weight: 500;
+    background: #343a40;
+    height: 28px;
+    width: 45px;
+    color: white;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 4px;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+.trivia_box header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+
+.trivia_box section {
+    padding: 24px 28px 20px 28px;
+    background: white;
+}
+
+.trivia_box section .question_text {
+    font-size: 24px;
+    font-weight: 700;
+
+}
+
+.trivia_box section .option_list {
+    padding: 20px 0;
+    display: block;
+}
+
+ section .option_list .option {
+     background: aliceblue;
+     font-weight: 200;
+     font-size: 16px;
+     border: 1px solid #84c5fe;
+     border-radius: 4px;
+     padding: 8px 16px;
+     margin-bottom: 16px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ section .option_list .option:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+ }
+
+ section .option_list .option.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+ .option_list .option:last-child {
+     margin-bottom: 0px;
+ }
+
+ section .option_list .option.disabled {
+    pointer-events: none;
+}
+
+ .option_list .option .icon {
+    height: 24px;
+    width: 24px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    pointer-events: none;
+
+ }
+
+ .option_list .option .icon.right {
+    border-color: #23903c;
+    color: #23903c;
+    background: #d4edda;
+ }
+
+ .option_list .option .icon.wrong {
+    border-color: #a42834;
+    color: #a42834;
+    background: #f8d7da;
+ }
+
+ .trivia_box footer {
+     height: 60px;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 30px;
+ }
+
+ .trivia_box footer .total_questions span {
+     display: flex;
+     user-select: none;
+ }
+
+footer .total_questions span p {
+     font-weight: 500;
+     padding: 0 4px;
+ }
+ 
+ footer .total_questions span p:first-child {
+     padding-left: 0px;
+ }
+
+ footer .next_button {
+     height: 40px;
+     padding: 0 12px;
+     font-size: 18px;
+     font-weight: 400;
+     border: none;
+     outline: none;
+     background: blue;
+     border-radius: 4px;
+     border: 1px solid blue;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ footer .next_button:hover {
+     background: #0263ca;
+ }
+
+ footer .next_button.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+ .result_box {
+    background: white;
+    width: 450px;
+    padding: 24px 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.3s ease;
+ }
+
+ .result_box .icon {
+     font-size: 100px;
+     color: #007bff;
+     margin-bottom: 10px;
+ }
+
+ .result_box .complete_text {
+     font-size: 20px;
+     font-weight: 500;
+ }
+
+ .result_box .score_text span {
+     display: flex;
+     margin: 10px 0;
+     font-size: 18px;
+     font-weight: 500;
+ }
+
+ .score_text span p {
+    font-weight: 700;
+    padding: 0 4px;
+ }
+
+ .result_box .buttons {
+     display: flex;
+     margin: 20px 0;
+
+ }
+
+ .result_box .buttons button {
+     margin: 0 10px;
+     height: 44px;
+     padding: 0 20px;
+     border: none;
+     outline: none;
+     font-size: 18px;
+     font-weight: 500;
+     border-radius: 4px;
+     border: 1px solid #007bff;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+.buttons button.restart{
+    color: #fff;
+    background: #007bff;
+}
+.buttons button.restart:hover{
+    background: #0263ca;
+}
+.buttons button.exit{
+    color: #007bff;
+    background: #fff;
+}
+.buttons button.exit:hover{
+    color: #fff;
+    background: #007bff;
+}

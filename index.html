@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triviapp</title>
+</head>
+<body>
+
+    <!-- Start and rules  -->
+
+    <div class="start_button"> <button>Start</button></div>
+    <div class="info_box"> 
+        <div class="info_title">
+            <span> Rules for this trivia </span>
+        </div>
+        <div class="info_list">
+            <div class="info">1. You will only have <span>30 seconds</span> per question.</div>
+            <div class="info">2. Once you select your answer, you won't be able to change it.</div>
+            <div class="info">3. If the time goes off, you won't be able to select an answer.</div>
+            <div class="info">4. You won't be able to exit the trivia while you're playing.</div>
+            <div class="info">5. Once you finish the trivia, you will be able to see your final score.</div>
+        </div>
+        <div class="buttons">
+            <button class="exit">Exit trivia</button>
+            <button class="restart">I'm ready!</button>
+        </div>
+    </div>
+    
+    <!-- Trivia box  -->
+
+    <div class="trivia_box">
+        <header>
+            <div class="title">Triviapp</div>
+            <div class="timer">
+                <div class="time_left_text">Time left</div>
+                <div class="timer_sec">30</div>
+            </div>
+            <div class="time_line"> </div>
+        </header>
+        <section>
+            <div class="question_text">
+                <!-- <span> Which character from the TV show "Friends" got married more times? </span> -->
+                <div class="option_list">
+                    <!-- <div class="option">
+                        <span> Ross </span>
+                        <div class="icon right"><span class="fas fa-check"></span></div>
+                    </div>
+                    <div class="option">
+                        <span> Rachel </span>
+                        <div class="icon wrong"><span class="fas fa-times"></span></div>
+                    </div>
+                    <div class="option">
+                        <span> Phoebe </span>
+                        <div class="icon wrong"><span class="fas fa-times"></span></div>
+                    </div>
+                    <div class="option">
+                        <span> Chandler </span>
+                        <div class="icon wrong"><span class="fas fa-times"></span></div>
+                    </div>
+                    <div class="option">
+                        <span> Joey </span>
+                        <div class="icon wrong"><span class="fas fa-times"></span></div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="total_questions">
+                <!-- <span><p>2</p><p>of</p><p>5</p>questions</span> -->
+            </div>
+            <button class="next_button">Next</button>
+        </footer>
+    </div>
+
+    <!-- Results  -->
+
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You have completed this trivia!</div>
+        <div class="score_text">
+            <!-- <span>You got<p>2</p>answers right out of<p>10</p> possible ones.</span> -->
+        </div>
+        <div class="buttons">
+            <button class="restart"> Play again </button>
+            <button class="exit"> Exit </button>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/questions.js"></script>
+
+</body>
+</html>
