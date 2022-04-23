@@ -72,7 +72,7 @@ const bottomQuestionsCounter = document.querySelector("footer .total_questions")
 // If Next button is clicked
 
 nextButton.onclick = () => {
-    if(questionsCount < questionsCount.length -1){
+    if(questionsCount < questions.length -1){
         questionsCount++;
         questionsNumber++;
         showQuestions(questionsCount);
@@ -92,15 +92,15 @@ nextButton.onclick = () => {
 }
 
 // Getting Q&A from an array
-
 function showQuestions(index) {
     const questionText = document.querySelector(".question_text");
+    
     let questionTag = '<span>'+ questions[index].number + ". " + questions[index].question +'</span>';
     let optionTag = 
     '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>' 
+    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[4] +'</span></div>';
 
     questionText.innerHTML = questionTag;
@@ -153,24 +153,28 @@ function showResults() {
     triviaBox.classList.remove("activeTrivia"); 
     resultBox.classList.add("activeResult"); 
     const scoreText = resultBox.querySelector(".score_text");
-    if(userScore > 7) {
-        let scoreTag = '<span>Congratulations! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
+    if(userScore == 10) {
+        let scoreTag = '<span>Perfect! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
-    } else if (7 > userScore > 4){
-        let scoreTag = '<span>Very nice! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
+    } else if (userScore <= 9 && userScore > 4){
+        let scoreTag = '<span>Nice! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
-    } else {
-        let scoreTag = '<span>Bad luck! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
+    } else if (userScore <= 4 && userScore > 1){
+        let scoreTag = '<span>Hmm, you got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else if (userScore == 1) {
+        let scoreTag = '<span>Oh, you got <p>'+ userScore +'</p> answer right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
 
 function startTimer(time) {
-        counter = setInterval (time, 30000);
+        counter = setInterval (timer, 1000);
         function timer(){
             timeCount.textContent = time;
             time--;
-            if(time < 29){
+            if(time < 9){
                 let addZero = timeCount.textContent; 
                 timeCount.textContent = "0" + addZero;
             }
@@ -178,18 +182,20 @@ function startTimer(time) {
                 clearInterval(counter); 
                 timeText.textContent = "Time's off"; 
                 const allOptions = optionList.children.length; 
-                let correctAnswer = questions[questionCount].answer;
-                    }
-                for(let i=0; i < allOptions; i++){
+                let correctAnswer = questions[questionsCount].answer;
+                    for(let i=0; i < allOptions; i++){
                     if(optionList.children[i].textContent == correctAnswer){ 
                         optionList.children[i].setAttribute("class", "option correct"); 
                         optionList.children[i].insertAdjacentHTML("beforeend", rightIconTag); 
                     }
+                }
+                for(let i=0; i < allOptions; i++){
+                    optionList.children[i].classList.add("disabled"); 
+                }
                     nextButton.classList.add("show");
             }
         }
-                
-        }
+    }
         function startTimeLine(time){
             counterLine = setInterval(timer, 57);
             function timer(){
