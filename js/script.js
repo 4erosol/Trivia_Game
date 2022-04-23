@@ -108,7 +108,7 @@ function showQuestions(index) {
 
     const option = optionList.querySelectorAll(".option");
 
-    for(i=0; i < option.length; i++) {
+    for(let i=0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
@@ -133,14 +133,14 @@ function optionSelected(answer) {
             answer.classList.add("incorrect"); 
             answer.insertAdjacentHTML("beforeend", wrongIconTag); 
 
-            for(i=0; i < allOptions; i++){
+            for(let i=0; i < allOptions; i++){
                 if(optionList.children[i].textContent == correctAnswer){ // 
                     optionList.children[i].setAttribute("class", "option correct"); 
                     optionList.children[i].insertAdjacentHTML("beforeend", rightIconTag); 
                 }
         }
     }
-        for(i=0; i < allOptions; i++){
+        for(let i=0; i < allOptions; i++){
             optionList.children[i].classList.add("disabled"); 
         }
         nextButton.classList.add("show"); 
@@ -156,7 +156,7 @@ function showResults() {
     if(userScore > 7) {
         let scoreTag = '<span>Congratulations! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
-    } else if (userScore > 4){
+    } else if (7 > userScore > 4){
         let scoreTag = '<span>Very nice! You got <p>'+ userScore +'</p> answers right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
     } else {
@@ -180,7 +180,7 @@ function startTimer(time) {
                 const allOptions = optionList.children.length; 
                 let correctAnswer = questions[questionCount].answer;
                     }
-                for(i=0; i < allOptions; i++){
+                for(let i=0; i < allOptions; i++){
                     if(optionList.children[i].textContent == correctAnswer){ 
                         optionList.children[i].setAttribute("class", "option correct"); 
                         optionList.children[i].insertAdjacentHTML("beforeend", rightIconTag); 
