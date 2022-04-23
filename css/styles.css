@@ -87,7 +87,7 @@ background: blue;
     height: 40px;
     width: 100px;
     border: 1px solid blue;
-    border-radius: 5px;
+    border-radius: 4px;
     color: white;
     font-size: 16px;
     font-weight: 500;
@@ -280,6 +280,8 @@ footer .total_questions span p {
      border: 1px solid blue;
      cursor: pointer;
      transition: all 0.3s ease;
+     color: white;
+
  }
 
  footer .next_button:hover {
@@ -294,7 +296,7 @@ footer .total_questions span p {
 
  .result_box {
     background: white;
-    width: 450px;
+    width: 550px;
     padding: 24px 30px;
     border-radius: 4px;
     display: flex;
