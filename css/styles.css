@@ -5,8 +5,15 @@
     font-family: 'Roboto', sans-serif;;
 }
 
+:root {
+    --purple: #6930c3;
+    --light-purple: #5e60ce;
+    --skyblue: #5390d9;
+    --lighter-purple: #e7e2ff;
+}
+
 body {
-background: blue;
+background: var(--purple);
 }
 
 .start_button, .info_box, .trivia_box, .result_box {
@@ -29,7 +36,7 @@ background: blue;
 .start_button button {
     font-size: 24px;
     font-weight: 500;
-    color: blue;
+    color: var(--purple);
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -70,7 +77,7 @@ background: blue;
 
 .info_box .info_list .info span {
     font-weight: 700;
-    color: blue;
+    color: var(--purple);
 }
 
 .info_box .buttons {
@@ -86,7 +93,7 @@ background: blue;
     margin: 0 5px;
     height: 40px;
     width: 100px;
-    border: 1px solid blue;
+    border: 2px solid var(--light-purple);
     border-radius: 4px;
     color: white;
     font-size: 16px;
@@ -131,7 +138,7 @@ background: blue;
     width: 145px;
     height: 45px;
     background: lightgoldenrodyellow;
-    border: 1px solid lightsteelblue;
+    border: 1px solid var(--light-purple);
     border-radius: 4px;
     padding: 0 8px;
 }
@@ -145,14 +152,14 @@ background: blue;
 .trivia_box header .timer .timer_sec {
     font-size: 18px;
     font-weight: 500;
-    background: #343a40;
+    background: var(--light-purple);
     height: 28px;
     width: 45px;
     color: white;
     text-align: center;
     line-height: 28px;
     border-radius: 4px;
-    border: 1px solid #343a40;
+    border: 1px solid var(--light-purple);
     user-select: none;
 }
 
@@ -161,7 +168,7 @@ background: blue;
     bottom: 0px;
     left: 0px;
     height: 3px;
-    background: #007bff;
+    background: var(--light-purple);
 }
 
 .trivia_box section {
@@ -184,7 +191,7 @@ background: blue;
      background: aliceblue;
      font-weight: 200;
      font-size: 16px;
-     border: 1px solid #84c5fe;
+     border: 1px solid var(--light-purple);
      border-radius: 4px;
      padding: 8px 16px;
      margin-bottom: 16px;
@@ -196,9 +203,9 @@ background: blue;
  }
 
  section .option_list .option:hover {
-    color: #004085;
-    background: #cce5ff;
-    border-color: #b8daff;
+    color: black;
+    background: var(--lighter-purple);
+    border-color: var(--light-purple);
  }
 
  section .option_list .option.correct {
@@ -275,9 +282,9 @@ footer .total_questions span p {
      font-weight: 400;
      border: none;
      outline: none;
-     background: blue;
+     background: var(--light-purple);
      border-radius: 4px;
-     border: 1px solid blue;
+     border: 1px solid var(--light-purple);
      cursor: pointer;
      transition: all 0.3s ease;
      color: white;
@@ -285,7 +292,7 @@ footer .total_questions span p {
  }
 
  footer .next_button:hover {
-     background: #0263ca;
+     background: var(--purple);
  }
 
  footer .next_button.show {
@@ -312,7 +319,7 @@ footer .total_questions span p {
 
  .result_box .icon {
      font-size: 100px;
-     color: #007bff;
+     color: var(--light-purple);
      margin-bottom: 10px;
  }
 
@@ -348,23 +355,24 @@ footer .total_questions span p {
      font-size: 18px;
      font-weight: 500;
      border-radius: 4px;
-     border: 1px solid #007bff;
+     border: 1px solid var(--light-purple);
      cursor: pointer;
      transition: all 0.3s ease;
  }
 
 .buttons button.restart{
     color: #fff;
-    background: #007bff;
+    background: var(--light-purple);
 }
 .buttons button.restart:hover{
-    background: #0263ca;
+    background: var(--purple);
+    border: var(--purple);
 }
 .buttons button.exit{
-    color: #007bff;
+    color: var(--light-purple);
     background: #fff;
 }
 .buttons button.exit:hover{
     color: #fff;
-    background: #007bff;
+    background: var(--light-purple);
 }

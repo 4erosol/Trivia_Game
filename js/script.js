@@ -167,6 +167,10 @@ function showResults() {
         let scoreTag = '<span>Oh, you got <p>'+ userScore +'</p> answer right out of <p>'+ questions.length +'</p>possible ones.</span>';
         scoreText.innerHTML = scoreTag;
     }
+    else if (userScore == 0) {
+        let scoreTag = '<span>Unfortunately you got 0 answers correct, but we would recommend you to try and complete this trivia again!</span>';
+        scoreText.innerHTML = scoreTag;
+    }
 }
 
 function startTimer(time) {
