@@ -378,17 +378,23 @@ footer .total_questions span p {
 }
 
 @media (max-width: 630px) {
-.info_box,
-.trivia_box,
-.result_box {
-    width: 350px;
-}
-.start_button,
-.info_box,
-.trivia_box,
-.result_box {
-position: fixed;
-top: 50%;
-left: 50%;
-}
+    .info_box,
+    .trivia_box,
+    .result_box {
+        width: 350px;
+    }
+    .start_button,
+    .info_box,
+    .trivia_box,
+    .result_box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    }
+    .result_box .score_text span {
+        font-size: 11px;
+    }
+    .result_box .complete_text {
+        font-size: 18px;
+    }
 }
