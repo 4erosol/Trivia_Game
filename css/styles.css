@@ -137,7 +137,7 @@ background: var(--purple);
     justify-content: space-between;
     width: 145px;
     height: 45px;
-    background: lightgoldenrodyellow;
+    background: var(--lighter-purple);
     border: 1px solid var(--light-purple);
     border-radius: 4px;
     padding: 0 8px;
@@ -188,7 +188,7 @@ background: var(--purple);
 }
 
  section .option_list .option {
-     background: aliceblue;
+     background: var(--lighter-purple);
      font-weight: 200;
      font-size: 16px;
      border: 1px solid var(--light-purple);
