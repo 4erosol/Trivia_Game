@@ -377,7 +377,7 @@ footer .total_questions span p {
     background: var(--light-purple);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 630px) {
 .info_box,
 .trivia_box,
 .result_box {
