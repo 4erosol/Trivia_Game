@@ -216,7 +216,7 @@ function startTimer(time) {
             else if(triviaWidth < 400) {
                  delay = 60; 
             }
-            console.log(delay, triviaWidth);                  
+                          
                counterLine = setInterval(timer, delay); 
             function timer(){
                 time += 1; 

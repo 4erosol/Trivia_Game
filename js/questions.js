@@ -45,7 +45,7 @@ let questions = [
       "Russel",
       "2D",
       "Noodles",
-      "Rianna"
+      "Rihanna"
     ]
   },
     {
