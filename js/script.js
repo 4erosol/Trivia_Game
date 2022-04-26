@@ -9,6 +9,8 @@ const timeLine = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_text");
 const timeCount = document.querySelector(".timer .timer_sec");
 
+
+
 // If Start button is clicked
 startButton.onclick = ()=> {
     infoBox.classList.add("activeInfo");
@@ -25,17 +27,21 @@ continueButton.onclick = ()=> {
     triviaBox.classList.add("activeTrivia");
     showQuestions(0);
     questionsCounter(1);
-    startTimer(30);
+    startTimer(20);
     startTimeLine(0);
 }
 
-let timeValue = 30;
+let triviaWidth = (triviaBox.offsetWidth) - 1;
+let timeValue = 20;
 let questionsCount = 0;
 let questionsNumber = 1;
 let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
+
+
+    
 
 const restartTrivia = resultBox.querySelector(".buttons .restart");
 const exitTrivia = resultBox.querySelector(".buttons .exit");
@@ -45,7 +51,7 @@ const exitTrivia = resultBox.querySelector(".buttons .exit");
 restartTrivia.onclick = ()=> {
     triviaBox.classList.add("activeTrivia");
     resultBox.classList.remove("activeResult");
-    timeValue = 30;
+    timeValue = 20;
     questionsCount = 0;
     questionsNumber = 1;
     userScore = 0;
@@ -200,12 +206,22 @@ function startTimer(time) {
             }
         }
     }
+
+
         function startTimeLine(time){
-            counterLine = setInterval(timer, 57);
+            let delay = 0;
+            if(triviaWidth > 500){
+                delay = 37.5; 
+            }
+            else if(triviaWidth < 400) {
+                 delay = 60; 
+            }
+            console.log(delay, triviaWidth);                  
+               counterLine = setInterval(timer, delay); 
             function timer(){
                 time += 1; 
                 timeLine.style.width = time + "px"; 
-                if(time > 549){ 
+                if(time > triviaWidth){ 
                     clearInterval(counterLine); 
                 }
             }
